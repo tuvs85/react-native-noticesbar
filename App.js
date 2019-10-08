@@ -1,29 +1,3 @@
-[react-native-noticeBar gitHub链接](https://github.com/tuvs85/react-native-noticeBar)
-# react-native-noticeBar
-react-native竖向滚动通知栏（公告栏）
-
-### install 使用
-```npm
-$ npm install react-native-noticeBar
-```
-```yarn
-$ yarn add react-native-noticeBar
-```
-
-### use 使用
-#### es5
-```
-//全部引用
-const NoticeBar = require('react-native-noticeBar')
-```
-#### es6
-```
-//全部引用
-import NoticeBar from 'react-native-noticeBar'
-```
-
-### 示例:
-```
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -63,8 +37,6 @@ export default class App extends Component<Props> {
   }
   render() {
     const { data } = this.state
-    //icon: 如果没有icon 不填或者null即可 React.Element格式
-    //showFieldName: 主要作用于json字段显示用 因为每个项目各不同，有的系统是title，有的系统是name 为了方便 直接定义出来设置
     return (
       <SafeAreaView>
         <View style={{ height: 40,borderColor: 'red',borderBottomWidth: 1,borderTopWidth: 1 }}>
@@ -107,12 +79,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-```
-![][1]
-
-[1]: ./image/react-native-noticeBar.gif
-
-MIT
-
-如果问题请联系 tuvs85@gmail.com
