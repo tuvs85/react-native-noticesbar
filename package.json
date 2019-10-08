@@ -1,8 +1,8 @@
 {
-  "name": "react-native-noticebar",
+  "name": "react-native-noticesbar",
   "version": "0.0.1",
   "description": "react-native竖向滚动通知栏（公告栏）",
-  "main": "react-native-noticebar.js",
+  "main": "react-native-noticesbar.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -12,10 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuvs85/react-native-noticebar.git"
+    "url": "git+https://github.com/tuvs85/react-native-noticesbar.git"
   },
   "keywords": [
-    "noticebar",
+    "noticesbar",
+    "react-native-noticesbar",
     "react-native-noticebar",
     "noticebar",
     "react-native通知栏",
@@ -24,9 +25,9 @@
   "author": "shufu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tuvs85/react-native-noticebar/issues"
+    "url": "https://github.com/tuvs85/react-native-noticesbar/issues"
   },
-  "homepage": "https://github.com/tuvs85/react-native-noticebar#readme",
+  "homepage": "https://github.com/tuvs85/react-native-noticesbar#readme",
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.5"

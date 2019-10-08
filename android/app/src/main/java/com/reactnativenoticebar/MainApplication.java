@@ -1,4 +1,4 @@
-package com.reactnativenoticebar;
+package com.reactnativenoticesbar;
 
 import android.app.Application;
 

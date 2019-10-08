@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Animated, Easing, StyleSheet, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
-export default class NoticeBar extends Component {
+export default class NoticesBar extends Component {
   static defaultProps = {
     enableAnimation: true,
   };

@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import NoticeBar from './react-native-noticeBar'
+import NoticesBar from './react-native-noticesbar'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -40,7 +40,7 @@ export default class App extends Component<Props> {
     return (
       <SafeAreaView>
         <View style={{ height: 40,borderColor: 'red',borderBottomWidth: 1,borderTopWidth: 1 }}>
-          <NoticeBar
+          <NoticesBar
             icon={<Text style={{lineHeight:40}}>图标</Text>}
             showFieldName="name"
             onPress={item => {

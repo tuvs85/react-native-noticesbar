@@ -1,25 +1,25 @@
-[react-native-noticebar gitHub链接](https://github.com/tuvs85/react-native-noticebar)
-# react-native-noticebar
+[react-native-noticesbar gitHub链接](https://github.com/tuvs85/react-native-noticesbar)
+# react-native-noticesbar
 react-native竖向滚动通知栏（公告栏）
 
 ### install 使用
 ```npm
-$ npm install react-native-noticebar
+$ npm install react-native-noticesbar
 ```
 ```yarn
-$ yarn add react-native-noticebar
+$ yarn add react-native-noticesbar
 ```
 
 ### use 使用
 #### es5
 ```
 //全部引用
-const NoticeBar = require('react-native-noticebar')
+const NoticesBar = require('react-native-noticesbar')
 ```
 #### es6
 ```
 //全部引用
-import noticebar from 'react-native-noticebar'
+import noticesbar from 'react-native-noticesbar'
 ```
 
 ### 示例:
@@ -34,7 +34,7 @@ import noticebar from 'react-native-noticebar'
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import noticebar from './react-native-noticebar'
+import noticesbar from './react-native-noticesbar'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -68,7 +68,7 @@ export default class App extends Component<Props> {
     return (
       <SafeAreaView>
         <View style={{ height: 40,borderColor: 'red',borderBottomWidth: 1,borderTopWidth: 1 }}>
-          <noticebar
+          <noticesbar
             icon={<Text style={{lineHeight:40}}>图标</Text>}
             showFieldName="name"
             onPress={item => {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 ```
 ![][1]
 
-[1]: ./image/react-native-noticebar.gif
+[1]: ./image/react-native-noticesbar.gif
 
 MIT
 
