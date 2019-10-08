@@ -1,6 +1,6 @@
 {
   "name": "react-native-noticesbar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-native竖向滚动通知栏（公告栏）",
   "main": "react-native-noticesbar.js",
   "scripts": {
