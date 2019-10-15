@@ -13,12 +13,12 @@ $ yarn add react-native-noticesbar
 ### use 使用
 #### es5
 ```
-//全部引用
+
 const NoticesBar = require('react-native-noticesbar')
 ```
 #### es6
 ```
-//全部引用
+
 import NoticesBar from 'react-native-noticesbar'
 ```
 
@@ -69,7 +69,8 @@ export default class App extends Component<Props> {
       <SafeAreaView>
         <View style={{ height: 40,borderColor: 'red',borderBottomWidth: 1,borderTopWidth: 1 }}>
           <NoticesBar
-            icon={<Text style={{lineHeight:40}}>图标</Text>}
+            icon={<Text style={[GlobalStyles.color1175e0, { position:'absolute',lineHeight: 40, width: 40}]}/>}
+            //如果有icon则建议调整定位功能使用
             showFieldName="name"
             onPress={item => {
               //事件
@@ -81,10 +82,11 @@ export default class App extends Component<Props> {
             scrollHeight={40}
             scrollStyle={{ alignItems: 'flex-start' }}
             textStyle={{ color: '#a1a7b9', fontSize: 13 }}
+            paddingLeft={40}
+            //增加图标宽度字段使用
           />
         </View>
       </SafeAreaView>
-
     );
   }
 }
@@ -109,7 +111,27 @@ const styles = StyleSheet.create({
 });
 
 ```
-![][1]
+## update
+### v0.0.1
+```
+1、组件上传
+```
+### v0.0.2
+```
+1、调整一些bug，
+```
+### v0.0.3
+```
+1、调整组件内所有样式，
+2、增加padding位置,如果无icon是可不用， 有icon是设置icon宽度即可，或者自己根据需求修改
+3、增加proptypes检验字段类型
+```
+### v0.0.4
+```
+1、删除错误引用包
+2、删除无用文件
+```
+![演示图][1]
 
 [1]: ./image/react-native-noticesbar.gif
 

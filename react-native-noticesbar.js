@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import { Text, View, Animated, Easing, StyleSheet, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-
+import PropTypes from 'prop-types';
 export default class NoticesBar extends Component {
   static defaultProps = {
     enableAnimation: true,
   };
-
+  static propTypes = {
+    icon: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+    showFieldName: PropTypes.string.isRequired,
+    onPress: PropTypes.func,
+    enableAnimation: PropTypes.bool,
+    data: PropTypes.oneOfType([PropTypes.array, PropTypes.object,PropTypes.string]),
+    delay: PropTypes.number,
+    duration: PropTypes.number,
+    scrollHeight: PropTypes.number.isRequired,
+    scrollStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    paddingLeft: PropTypes.number,
+  }
   constructor(props) {
     super(props);
     let translateValue = new Animated.ValueXY({ x: 0, y: 0 });
@@ -13,7 +25,7 @@ export default class NoticesBar extends Component {
     this.state = {
       translateValue: translateValue,
       // 滚屏高度
-      scrollHeight: this.props.scrollHeight || 32,
+      scrollHeight: this.props.scrollHeight,
       // 滚屏内容
       kb_content: [],
       // Animated.View 滚动到的 y轴坐标
@@ -24,6 +36,7 @@ export default class NoticesBar extends Component {
       delay: this.props.delay || 500,
       // 每一次滚动切换的持续时间
       duration: this.props.duration || 500,
+
       enableAnimation: true,
     };
   }
@@ -38,11 +51,11 @@ export default class NoticesBar extends Component {
         ]}
       >
         {this.props.icon}
-        <View style={[this.props.icon ? '' : { paddingLeft: 10 }]}>
+        <View style={[this.props.icon ? { paddingLeft: this.props.paddingLeft }: '']}>
           {this.state.kb_content.length !== 0 ? (
             <Animated.View
               style={[
-                { flexDirection: 'column' },
+                { flexDirection: 'column'},
                 {
                   transform: [{ translateY: this.state.translateValue.y }],
                 },
@@ -97,9 +110,9 @@ export default class NoticesBar extends Component {
           this.props.onPress(kbItem);
         }}
         key={index}
-        style={[{ justifyContent: 'center', height: this.state.scrollHeight }, this.props.scrollStyle]}
+        style={[{ justifyContent: 'center', height: this.state.scrollHeight}, this.props.scrollStyle]}
       >
-        <Text numberOfLines={3} style={[styles.kb_text_c, this.props.textStyle,{ height: this.state.scrollHeight ,lineHeight: this.state.scrollHeight }]}>{kbItem[this.props.showFieldName]}</Text>
+        <Text numberOfLines={3} style={[this.props.textStyle,{height: this.state.scrollHeight ,lineHeight: this.state.scrollHeight }]}>{kbItem[this.props.showFieldName]}</Text>
       </TouchableWithoutFeedback>
     );
   }
@@ -155,9 +168,5 @@ const styles = StyleSheet.create({
     // 必须要有一个背景或者一个border，否则本身高度将不起作用
     backgroundColor: 'transparent',
     overflow: 'hidden',
-  },
-  kb_text_c: {
-    fontSize: 18,
-    color: '#181818',
   },
 });

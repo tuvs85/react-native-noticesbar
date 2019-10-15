@@ -4,7 +4,7 @@
 
 # Xcode
 #
-ios/build
+ios/
 build/
 *.pbxuser
 !default.pbxuser
@@ -26,16 +26,13 @@ package-lock.json
 yarn.lock
 # Android/IntelliJ
 #
-android/build
-android/app/build
-android/.gradle
-android/.idea
-build/
+android/
 .idea
 .gradle
 local.properties
 *.iml
-
+yarn
+package-lock.json
 # node.js
 #
 node_modules/
@@ -59,4 +56,15 @@ buck-out/
 */fastlane/screenshots
 
 # Bundle artifact
+.watchmanconfig
+.flowconfig
+.buckconfig
 *.jsbundle
+image/
+App.js
+app.json
+babel.config.js
+index.js
+metro.config.js
+
+README.md
